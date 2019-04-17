@@ -83,8 +83,8 @@ class URLMonitor:
                	self.sustitucion[host] = x
                	self.real[x] = host
             else:
-                self.sustitucion[host] = "wvw."+host
-                self.real["wvw."+host] = host
+                self.sustitucion[host] = "https."+host
+                self.real["https."+host] = host
             logging.debug("LEO: ssl host      (%s) tokenized (%s)" % (host,self.sustitucion[host]) )
 
         url = 'http://' + host + path

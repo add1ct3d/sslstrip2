@@ -79,11 +79,12 @@ class URLMonitor:
         if not self.sustitucion.has_key(host):
             lhost = host[:4]
             if lhost=="www.":
-                self.sustitucion[host] = "w"+host
-                self.real["w"+host] = host
+               	x = host.replace("www.", "wvw.")
+               	self.sustitucion[host] = x
+               	self.real[x] = host
             else:
-                self.sustitucion[host] = "web"+host
-                self.real["web"+host] = host
+                self.sustitucion[host] = "wvw."+host
+                self.real["wvw."+host] = host
             logging.debug("LEO: ssl host      (%s) tokenized (%s)" % (host,self.sustitucion[host]) )
 
         url = 'http://' + host + path
